@@ -101,7 +101,6 @@ class SessionSettings(Screen):
 
     def run_pressed(self, instance):
         try:
-            game_overlay_sdk.injector.enable_monitor_logger()
             screen_recorder.enable_log()
             fps_inspector.enable_fliprate_log()
             ready = True
@@ -111,6 +110,7 @@ class SessionSettings(Screen):
                 self.game_inspector.config.pid = self.pid_value
                 self.game_inspector.config.use_overlay = False
             elif self.process_path.text:
+                game_overlay_sdk.injector.enable_monitor_logger()
                 if self.steam_app_id.text:
                     game_overlay_sdk.injector.run_process(self.process_path.text, '', int(self.steam_app_id.text))
                 else:
@@ -120,6 +120,7 @@ class SessionSettings(Screen):
                 self.game_inspector.config.pid = self.pid_value
                 self.game_inspector.config.use_overlay = True
             elif self.process_name.text:
+                game_overlay_sdk.injector.enable_monitor_logger()
                 game_overlay_sdk.injector.start_monitor(self.process_name.text)
                 # wait for process creation
                 Alert(title='Waiting for process with name %s' % self.process_name.text, text = 'now you need to start target process manually', condition = self.check_pid)

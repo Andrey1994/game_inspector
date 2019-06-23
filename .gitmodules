@@ -1,0 +1,12 @@
+[submodule "fps_inspector_sdk"]
+	path = fps_inspector_sdk
+	url = https://github.com/Andrey1994/fps_inspector_sdk
+	branch = master
+[submodule "screen_recorder_sdk"]
+	path = screen_recorder_sdk
+	url = https://github.com/Andrey1994/screen_recorder_sdk
+	branch = master
+[submodule "game_overlay_sdk"]
+	path = game_overlay_sdk
+	url = https://github.com/Andrey1994/game_overlay_sdk
+	branch = master
