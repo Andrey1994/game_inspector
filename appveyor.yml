@@ -11,7 +11,7 @@ platform:
 
 stack: python 3
 
-clone_depth: 3
+clone_depth: 10
 
 build: off
 
@@ -20,15 +20,15 @@ init:
   - cmd: set CNC_INSTALL_CNCA0_CNCB0_PORTS="YES"
 
 install:
-  - python fps_inspector_sdk\python\setup.py install
-  - python screen_recorder_sdk\python\setup.py install
-  - python game_overlay_sdk\python\setup.py install
+  - python %APPVEYOR_BUILD_FOLDER%\fps_inspector_sdk\python\setup.py install
+  - python %APPVEYOR_BUILD_FOLDER%\screen_recorder_sdk\python\setup.py install
+  - python %APPVEYOR_BUILD_FOLDER%\game_overlay_sdk\python\setup.py install
   - python -m pip install -r requirements.txt
   - garden.bat install filebrowser --kivy
   - garden.bat install matplotlib --kivy
 
 test_script:
-  - python -m PyInstaller game_inspector.spec
+  - python -m PyInstaller %APPVEYOR_BUILD_FOLDER%\game_inspector.spec
 
 artifacts:
   - path: dist
