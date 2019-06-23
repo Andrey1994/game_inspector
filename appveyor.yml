@@ -20,6 +20,7 @@ init:
   - cmd: set CNC_INSTALL_CNCA0_CNCB0_PORTS="YES"
 
 install:
+  - git submodule update --init --recursive
   - python %APPVEYOR_BUILD_FOLDER%\fps_inspector_sdk\python\setup.py install
   - python %APPVEYOR_BUILD_FOLDER%\screen_recorder_sdk\python\setup.py install
   - python %APPVEYOR_BUILD_FOLDER%\game_overlay_sdk\python\setup.py install
