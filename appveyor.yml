@@ -1,0 +1,45 @@
+environment:
+  PY_DIR: C:\Python36-x64
+
+skip_non_tags: true
+
+image:
+- Visual Studio 2015
+
+platform:
+  - x64
+
+stack: python 3
+
+clone_depth: 10
+
+build: off
+
+init:
+  - cmd: set PATH=%PY_DIR%;%PY_DIR%\Scripts;%APPVEYOR_BUILD_FOLDER%\data\lib;%PATH%
+  - cmd: set CNC_INSTALL_CNCA0_CNCB0_PORTS="YES"
+
+install:
+  - git submodule update --init --recursive
+  - python %APPVEYOR_BUILD_FOLDER%\fps_inspector_sdk\python\setup.py install
+  - python %APPVEYOR_BUILD_FOLDER%\screen_recorder_sdk\python\setup.py install
+  - python %APPVEYOR_BUILD_FOLDER%\game_overlay_sdk\python\setup.py install
+  - python -m pip install -r requirements.txt
+  - garden.bat install filebrowser --kivy
+  - garden.bat install matplotlib --kivy
+
+test_script:
+  - python -m PyInstaller %APPVEYOR_BUILD_FOLDER%\game_inspector.spec
+
+artifacts:
+  - path: dist
+    name: game_inspector
+    type: zip
+
+notifications:
+  - provider: Email
+    to:
+      - a1994ndrey@gmail.com
+    on_build_success: false
+    on_build_failure: true
+    on_build_status_changed: true
