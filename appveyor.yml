@@ -20,9 +20,9 @@ init:
   - cmd: set CNC_INSTALL_CNCA0_CNCB0_PORTS="YES"
 
 install:
-  - python -m pip install fps_inspector_sdk\python\setup.py install
-  - python -m pip install screen_recorder_sdk\python\setup.py install
-  - python -m pip install game_overlay_sdk\python\setup.py install
+  - python fps_inspector_sdk\python\setup.py install
+  - python screen_recorder_sdk\python\setup.py install
+  - python game_overlay_sdk\python\setup.py install
   - python -m pip install -r requirements.txt
   - garden.bat install filebrowser --kivy
   - garden.bat install matplotlib --kivy
