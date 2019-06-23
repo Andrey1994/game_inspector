@@ -1,0 +1,11 @@
+setuptools
+virtualenv
+docutils
+pygments
+pypiwin32
+pyqt5
+pyinstaller
+game_overlay_sdk
+fps_inspector_sdk
+screen_recorder_sdk
+keyboard
