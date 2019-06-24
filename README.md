@@ -15,7 +15,7 @@ Game overlay is an experimental feature, for now it should work with x32 and x64
 * DX12
 * Vulkan
 
-To use Game Overlay you need to choose Process Path or Process Name option, also for Steam Games you need to enter Game Id, more information about these options can be found in [game_overlay_sdk readme](https://github.com/Andrey1994/game_overlay_sdk)
+To use Game Overlay you need to choose Process Path or Process Name option, also for Steam Games you need to enter Game Id and make sure that Steam Client App is running, more information about these options can be found in [game_overlay_sdk readme](https://github.com/Andrey1994/game_overlay_sdk)
 
 ## Installation(exe)
 Just download a standalone executable file from [release page](https://github.com/Andrey1994/game_inspector/releases)
