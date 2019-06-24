@@ -16,7 +16,10 @@ Game overlay is an experimental feature, for now it should work with x32 and x64
 * Vulkan
 To use Game Overlay you need to choose Process Path or Process Name option, also for Steam Games you need to enter Game Id, more information about these options can be found in [game_overlay_sdk readme](https://github.com/Andrey1994/game_overlay_sdk)
 
-## Installation
+## Installation(exe)
+Just Donwload standalone executable file from [release page](https://github.com/Andrey1994/game_inspector/releases)
+
+## Installation(Python)
 First of all you need to install Python 3 x64
 
 To install all dependencies please run:
