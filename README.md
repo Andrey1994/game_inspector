@@ -41,7 +41,7 @@ python game_inspector.py
 ```
 To create a standalone executable please run:
 ```
-python -m pyinstaller game_inspector.spec
+pyinstaller game_inspector.spec
 ```
 game_inspector.exe will be in dist folder
 
